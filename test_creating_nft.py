@@ -19,9 +19,9 @@ class Test_qamarket:
         self.driver.maximize_window()
         self.driver.find_element_by_xpath('//*[@id="root"]/div[1]/div[1]/div[2]/div').click()
         user=self.driver.find_element_by_xpath('//*[@id="root"]/div[1]/div[1]/div[10]/div/div[2]/div/div/div/div[2]/div/div/input')
-        user.send_keys('niyog28jan')
+        user.send_keys('') # specify the valid username on the marketplace
         password=self.driver.find_element_by_xpath('//*[@id="root"]/div[1]/div[1]/div[10]/div/div[2]/div/div/div/div[3]/div/div/input')
-        password.send_keys('Test@123')
+        password.send_keys('')# password of the username
         self.driver.find_element_by_xpath("//button[@class='MuiButtonBase-root MuiButton-root MuiButton-contained']").click()
         time.sleep(10)
         yield
@@ -33,12 +33,12 @@ class Test_qamarket:
         self.driver.find_element_by_xpath("//div[@aria-label='Dropdown select']").click()
         time.sleep(2)
         self.driver.find_element_by_xpath("//div[@aria-label='Dropdown select']/div[3]/div[14]").click()
-        self.driver.find_element_by_xpath("//input[@type='file']").send_keys('/Users/aicumen-dev/Downloads/images.jpeg')
-        self.driver.find_element_by_xpath('//*[@id="root"]/div[1]/div[4]/div[2]/div[1]/div[1]/div[2]/input').send_keys('Selenium')
+        self.driver.find_element_by_xpath("//input[@type='file']").send_keys('/Users/aicumen-dev/Downloads/images.jpeg') # specify the path of the image to be uploaded
+        self.driver.find_element_by_xpath('//*[@id="root"]/div[1]/div[4]/div[2]/div[1]/div[1]/div[2]/input').send_keys('Selenium')# name of the NFt
         self.driver.find_element_by_xpath("//select[@class='styles_categoryDropdown__3ZYjl']/option[2]").click()
-        self.driver.find_element_by_xpath("//textarea[@placeholder='Description']").send_keys('jpeg format')
-        self.driver.find_element_by_xpath("//input[@placeholder='Supply']").send_keys('10')
-        self.driver.find_element_by_xpath("//input[@placeholder='Royalty']").send_keys('4')
+        self.driver.find_element_by_xpath("//textarea[@placeholder='Description']").send_keys('jpeg format')# decription of the NFT
+        self.driver.find_element_by_xpath("//input[@placeholder='Supply']").send_keys('10')# how much editions to be minted
+        self.driver.find_element_by_xpath("//input[@placeholder='Royalty']").send_keys('4')# specify the royality of for the NFT
         self.driver.find_element_by_xpath('//*[@id="root"]/div[1]/div[4]/div[2]/div[2]').click()
         time.sleep(60)
         self.driver.find_element_by_xpath("//div[@class='styles_account__3MgT6 styles_menuLink__17kgw']").click()
